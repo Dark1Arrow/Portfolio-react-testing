@@ -31,7 +31,7 @@ function App() {
         <RouterProvider router={Router} /> */}
 
 
-        <HashRouter>
+        <HashRouter basename="/Portfolio-react">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Project" element={<Project />} />
