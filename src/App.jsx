@@ -29,19 +29,27 @@ function App() {
   return (
     <>
       <div className='bg-[#111111] text-white' style={{ font: "popins" }}>
+<<<<<<< HEAD
 
 
         {/* <HashRouter>
+=======
+        <HashRouter basename="/Portfolio-react">
+>>>>>>> 1ce1e85e2798ac0634cd693e104ef41303fade80
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Project" element={<Project />} />
             <Route path="/About" element={<About />} />
             <Route path="/Contact" element={<Contact />} />
           </Routes>
+<<<<<<< HEAD
         </HashRouter> */}
 
         <div className='bg-black text-white'>hello ther is page </div>
 
+=======
+        </HashRouter>
+>>>>>>> 1ce1e85e2798ac0634cd693e104ef41303fade80
       </div>
     </>
   )
