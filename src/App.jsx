@@ -1,8 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
-import Home from './Components/Home'
-import Project from './Components/Project'
-import About from './Components/About'
-import Contact from './Components/Contact'
+
 function App() {
 
   // const Router = createBrowserRouter([
