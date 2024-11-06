@@ -30,7 +30,7 @@ function App() {
     <>
       <div className='bg-[#111111] text-white' style={{ font: "popins" }}>
 
-
+{/* 
         <HashRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -38,7 +38,9 @@ function App() {
             <Route path="/About" element={<About />} />
             <Route path="/Contact" element={<Contact />} />
           </Routes>
-        </HashRouter>
+        </HashRouter> */}
+
+        <div>hey</div>
 
       </div>
     </>
