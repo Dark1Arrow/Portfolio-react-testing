@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.scroll-section{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.scroll-section::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari */
+  }
+  
+  .scroll-section {
+    -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+
+ 
