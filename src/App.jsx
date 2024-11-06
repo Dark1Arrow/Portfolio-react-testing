@@ -23,12 +23,12 @@ function App() {
   //     element: <><Contact /></>
   //   },
   // ])
+  {/* 
+  <RouterProvider router={Router} /> */}
 
   return (
     <>
       <div className='bg-[#111111] text-white' style={{ font: "popins" }}>
-        {/* 
-        <RouterProvider router={Router} /> */}
 
 
         <HashRouter>
