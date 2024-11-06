@@ -28,7 +28,7 @@ function App() {
     <>
       <div className='bg-[#111111] text-white' style={{ font: "popins" }}>
         {/* 
-        <RouterProvider router={Router} /> */}
+        <RouterProvider router={Router} /> 
 
 
         <HashRouter basename="/Portfolio-react">
@@ -39,7 +39,8 @@ function App() {
             <Route path="/Contact" element={<Contact />} />
           </Routes>
         </HashRouter>
-
+*/}
+        <Home />
 
       </div>
     </>
