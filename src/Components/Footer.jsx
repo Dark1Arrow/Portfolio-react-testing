@@ -9,7 +9,7 @@ const Footer = () => {
                     Have <span className='text-[#555555]'>an</span> idea<span className='text-[#555555]'>?</span> Let’s <span className='text-[#555555]'>turn</span> it <span className='text-[#555555]'>into</span> reality—<span className='text-[#555555]'>get</span> in <span className='text-[#555555]'>touch</span>!
                 </div>
 
-                <button className='uppercase h-12 w-48 rounded-full mx-auto my-4 bg-white text-black font-semibold text-lg sm:text-xl transition-all ease-in-out duration-500 sm:hover:scale-105 '><Link to={"/Portfolio-react/Contact"}>contact me</Link></button>
+                <button className='uppercase h-12 w-48 rounded-full mx-auto my-4 bg-white text-black font-semibold text-lg sm:text-xl transition-all ease-in-out duration-500 sm:hover:scale-105 '><Link to={"/Contact"}>contact me</Link></button>
 
                 <div className='w-full flex justify-between my-14 gap-10 sm:flex-row flex-col px-20'>
                     <div className='mx-auto sm:mx-0'><img src="homePage/logo1.svg" alt="" /></div>
