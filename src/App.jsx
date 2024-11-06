@@ -41,6 +41,7 @@ function App() {
         </HashRouter>
 */}
         <Home />
+        <div> hello see teseting</div>
 
       </div>
     </>
