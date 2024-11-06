@@ -7,19 +7,19 @@ function App() {
 
   const Router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Portfolio-react/",
       element: <><Home /></>
     },
     {
-      path: "/Project",
+      path: "/Portfolio-react/Project",
       element: <><Project /></>
     },
     {
-      path: "/About",
+      path: "/Portfolio-react/About",
       element: <><About /></>
     },
     {
-      path: "/Contact",
+      path: "/Portfolio-react/Contact",
       element: <><Contact /></>
     },
   ])

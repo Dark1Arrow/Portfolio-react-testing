@@ -22,20 +22,20 @@ const Navbar = ({target}) => {
             intial={{ y: "-100vh" }}
             animate={{ y: activeBar ? 0 : '-100vh' }}
             transition={{ duration: 1.5, ease: 'easeInOut' }}>
-            <motion.div className='textAnimation' ><Link to="/">Home</Link></motion.div>
-            <motion.div className='textAnimation' ><Link to="/Project">project</Link></motion.div>
-            <motion.div className='textAnimation' ><Link to="/About">About</Link></motion.div>
-            <motion.div className='textAnimation' ><Link to="/Contact">Contact</Link></motion.div>
+            <motion.div className='textAnimation' ><Link to="/Portfolio-react/">Home</Link></motion.div>
+            <motion.div className='textAnimation' ><Link to="/Portfolio-react/Project">project</Link></motion.div>
+            <motion.div className='textAnimation' ><Link to="/Portfolio-react/About">About</Link></motion.div>
+            <motion.div className='textAnimation' ><Link to="/Portfolio-react/Contact">Contact</Link></motion.div>
           </motion.ul>
         </motion.div>
         <div className="logo uppercase"><img src="homePage/logo1.svg" alt="" /></div>
         <div className='lg:hidden flex'><img className='cursor-pointer' onClick={() => setActiveBar(true)} src="homePage/menu1.svg" alt="" /></div>
         <div className='hidden lg:flex'>
           <ul className='uppercase flex gap-10 text-lg font-semibold'>
-            <div className={`${hover === "home" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"}  transition-all ease-in-out duration-500 `}><Link to="/">Home</Link></div>
-            <div className={` ${hover === "project" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Project">project</Link></div>
-            <div className={` ${hover === "about" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/About">About</Link></div>
-            <div className={` ${hover === "contact" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Contact">Contact</Link></div>
+            <div className={`${hover === "home" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"}  transition-all ease-in-out duration-500 `}><Link to="/Portfolio-react/">Home</Link></div>
+            <div className={` ${hover === "project" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Portfolio-react/Project">project</Link></div>
+            <div className={` ${hover === "about" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Portfolio-react/About">About</Link></div>
+            <div className={` ${hover === "contact" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Portfolio-react/Contact">Contact</Link></div>
           </ul>
         </div>
       </div>

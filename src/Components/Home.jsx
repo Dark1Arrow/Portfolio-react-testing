@@ -59,10 +59,10 @@ const Home = () => {
                             }}>
                             <div className={`absolute top-10 right-10`}><img onClick={() => setActiveBar(false)} src="homePage/cross.svg" alt="" /></div>
                             <ul className='uppercase flex flex-col gap-10 text-5xl text-center' >
-                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/">Home</Link></div>
-                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/Project">project</Link></div>
-                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/About">About</Link></div>
-                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/Contact">Contact</Link></div>
+                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/Portfolio-react/">Home</Link></div>
+                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/Portfolio-react/Project">project</Link></div>
+                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/Portfolio-react/About">About</Link></div>
+                                <div className=' sm:hover:text-[#8B8B8B] transition-all ease-in-out duration-500  textAnimation'><Link to="/Portfolio-react/Contact">Contact</Link></div>
                             </ul>
                         </div>
 
@@ -78,11 +78,11 @@ const Home = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: 1, ease: easeInOut }}>
                             <ul className='flex font-semibold text-xl text-white'>
-                                <div className='font-bold text-[#000000] border-r-2 border-white px-10'><Link to="/">Home</Link></div>
-                                <div className=' sm:hover:text-[#1E2024] transition-all ease-in-out duration-500  border-r-2 border-white px-10'>                <div><Link to="/Project">project</Link></div>
+                                <div className='font-bold text-[#000000] border-r-2 border-white px-10'><Link to="/Portfolio-react/">Home</Link></div>
+                                <div className=' sm:hover:text-[#1E2024] transition-all ease-in-out duration-500  border-r-2 border-white px-10'>                <div><Link to="/Portfolio-react/Project">project</Link></div>
                                 </div>
-                                <div className=' sm:hover:text-[#1E2024] transition-all ease-in-out duration-500  border-r-2 border-white px-10'><Link to="/About">About</Link></div>
-                                <div className=' sm:hover:text-[#1E2024] transition-all ease-in-out duration-500   px-10'><Link to="/Contact">Contact</Link></div>
+                                <div className=' sm:hover:text-[#1E2024] transition-all ease-in-out duration-500  border-r-2 border-white px-10'><Link to="/Portfolio-react/About">About</Link></div>
+                                <div className=' sm:hover:text-[#1E2024] transition-all ease-in-out duration-500   px-10'><Link to="/Portfolio-react/Contact">Contact</Link></div>
                             </ul>
                         </motion.div>
 
@@ -130,7 +130,7 @@ const Home = () => {
 
                     <div className="overflow-hidden hero-buttons xl:pb-20 mt-5  xl:w-[40vw] ">
                         <div className=' overflow-hidden flex justify-between gap-5'>
-                            <Link to="/Project"><motion.button className='transition-all ease-in-out duration-500 sm:hover:bg-black bg-[#00000090] scale-0 backdrop-blur-[5px] w-fit m-auto text-white font-normal text-xl xl:text-2xl px-14 py-5  rounded-full' style={{
+                            <Link to="/Portfolio-react/Project"><motion.button className='transition-all ease-in-out duration-500 sm:hover:bg-black bg-[#00000090] scale-0 backdrop-blur-[5px] w-fit m-auto text-white font-normal text-xl xl:text-2xl px-14 py-5  rounded-full' style={{
                                 letterSpacing: 4,
                                 wordSpacing: 10,
                             }}
@@ -139,7 +139,7 @@ const Home = () => {
                                 transition={{ duration: 0.5, delay: 1, ease: easeInOut }}
                             >View My Work</motion.button></Link>
 
-                            <Link to="/Contact"> <motion.button className=' transition-all ease-in-out duration-500 sm:hover:bg-[#1e1f1e]  lg:flex hidden w-fit m-auto  text-white font-normal text-xl xl:text-2xl px-20 py-5 border border-[#555216] bg-[#ffffff15] backdrop-blur-[5px] rounded-full' style={{
+                            <Link to="/Portfolio-react/Contact"> <motion.button className=' transition-all ease-in-out duration-500 sm:hover:bg-[#1e1f1e]  lg:flex hidden w-fit m-auto  text-white font-normal text-xl xl:text-2xl px-20 py-5 border border-[#555216] bg-[#ffffff15] backdrop-blur-[5px] rounded-full' style={{
                                 letterSpacing: 4,
                                 wordSpacing: 10,
                             }}
@@ -165,7 +165,7 @@ const Home = () => {
                         <div className='xl:w-[70%] w-full text-[#8A8A8A] '>I believe that a well-designed website is not just about aesthetics but also about usability and impact. My focus is on crafting visually stunning websites that are both engaging and intuitive, ensuring that every user interaction feels smooth and natural.</div>
                     </div>
                     <div className='flex sm:order-4 pt-5 md:pt-0 row-span-1 justify-center md:justify-start'>
-                        <Link to="/About"><button className='duration-500 sm:hover:bg-white sm:hover:text-black sm:hover:scale-110 transition-all ease-in-out border-2 rounded-full w-48 h-10 my-auto text-xl'>Learn more</button></Link>
+                        <Link to="/Portfolio-react/About"><button className='duration-500 sm:hover:bg-white sm:hover:text-black sm:hover:scale-110 transition-all ease-in-out border-2 rounded-full w-48 h-10 my-auto text-xl'>Learn more</button></Link>
                     </div>
                 </div>
             </div>
@@ -206,7 +206,7 @@ const Home = () => {
                 </div>
 
                 <div className='m-auto mt-20 w-[200px] h-[50px]'>
-                    <Link to="/Project"><button className='duration-500 sm:hover:bg-white sm:hover:text-black sm:hover:scale-110 transition-all ease-in-out bg-[#1E1E1E] w-[200px] h-[50px] text-xl rounded-full border border-[#252525]' >Learn more</button></Link>
+                    <Link to="/Portfolio-react/Project"><button className='duration-500 sm:hover:bg-white sm:hover:text-black sm:hover:scale-110 transition-all ease-in-out bg-[#1E1E1E] w-[200px] h-[50px] text-xl rounded-full border border-[#252525]' >Learn more</button></Link>
                 </div>
             </div>
 
@@ -262,7 +262,7 @@ const Home = () => {
                         <div className='text-lg sm:text-2xl font-light text-center capitalize sm:px-10'>
                             Learn more about me and my journey in web development and design.
                         </div>
-                        <Link to="/about"><button className=' sm:hover:bg-white sm:hover:text-black sm:hover:scale-110 transition-all ease-in-out duration-500 bg-[#1E1E1E] w-[200px] min-h-[50px] text-xl rounded-full border border-[#252525]' >Learn more</button></Link>
+                        <Link to="/Portfolio-react/about"><button className=' sm:hover:bg-white sm:hover:text-black sm:hover:scale-110 transition-all ease-in-out duration-500 bg-[#1E1E1E] w-[200px] min-h-[50px] text-xl rounded-full border border-[#252525]' >Learn more</button></Link>
                     </div>
                 </div>
 
