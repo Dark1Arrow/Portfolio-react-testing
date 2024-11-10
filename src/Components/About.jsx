@@ -75,7 +75,7 @@ const About = () => {
                             </div>
                             <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration: 2, delay:0.5}} className='ml-[20px] w-[300px] h-[480px]'
                                 style={{
-                                    backgroundImage: "url('/homePage/profile.png')",
+                                    backgroundImage: "url('./homePage/profile.png')",
                                     backgroundPosition: "center",
                                     backgroundSize: "cover",
                                 }}></motion.div>

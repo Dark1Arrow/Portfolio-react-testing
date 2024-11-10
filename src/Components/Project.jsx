@@ -174,7 +174,7 @@ const Project = () => {
                             <div key={index} className='card py-20 px-6 sm:px-20 md:px-5 lg:px-5 h-[350px] sm:h-[400px] lg:h-[550px]'>
                                 <motion.div className='  border-[3px] border-[#252525] flex justify-center items-center text-5xl h-full w-full'
                                     style={{
-                                        backgroundImage: `url("/projectPage/${data}")`,
+                                        backgroundImage: `url("./projectPage/${data}")`,
                                         backgroundPosition: "center",
                                         backgroundRepeat: "no-repeat",
                                         backgroundSize: "cover",
@@ -207,7 +207,7 @@ const Project = () => {
                                     </div>
                                     <div className='w-[100%] md:w-[90%] lg:w-[60%] h-[40%] lg:h-[90%] border border-[#2D2D2D]'
                                         style={{
-                                            backgroundImage: `url("/projectPage/${data}")`,
+                                            backgroundImage: `url("./projectPage/${data}")`,
                                             backgroundPosition: "start",
                                             backgroundRepeat: "no-repeat",
                                             backgroundSize: "cover",
