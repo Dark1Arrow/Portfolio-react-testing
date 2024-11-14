@@ -12,7 +12,7 @@ const Navbar = ({target}) => {
 
   return (
     <div>
-      <div className='w-[full] h-[80px] bg-[#1a1a1a] flex justify-between px-10 lg:px-20 items-center'>
+      <div className='w-[full] h-[70px] bg-[#1a1a1a] flex justify-between px-10 lg:px-20 items-center'>
         <motion.div className={`${activeBar ? '-translate-y-[0vh]' : "-translate-y-[100vh]"} lg:hidden flex flex-col fixed z-[100] top-0 right-0 w-[100vw] h-[100vh] bg-[#181818] justify-center items-center`}
           style={{
             transition: "transform 0.75s ease-in-out",
@@ -28,14 +28,14 @@ const Navbar = ({target}) => {
             <motion.div className='textAnimation' ><Link to="/Contact">Contact</Link></motion.div>
           </motion.ul>
         </motion.div>
-        <div className="logo uppercase"><img src="homePage/logo1.svg" alt="" /></div>
-        <div className='lg:hidden flex'><img className='cursor-pointer' onClick={() => setActiveBar(true)} src="homePage/menu1.svg" alt="" /></div>
+        <div className="logo uppercase"><img className='w-[80px]' src="homePage/logo1.svg" alt="" /></div>
+        <div className='lg:hidden flex'><img className='cursor-pointer w-[30px]' onClick={() => setActiveBar(true)} src="homePage/menu1.svg" alt="" /></div>
         <div className='hidden lg:flex'>
-          <ul className='uppercase flex gap-10 text-lg font-semibold'>
-            <div className={`${hover === "home" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"}  transition-all ease-in-out duration-500 `}><Link to="/">Home</Link></div>
-            <div className={` ${hover === "project" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Project">project</Link></div>
-            <div className={` ${hover === "about" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/About">About</Link></div>
-            <div className={` ${hover === "contact" ?"text-[#2eb9ff] text-bold text-xl" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Contact">Contact</Link></div>
+          <ul className='uppercase flex gap-10 text-[16px] font-medium'>
+            <div className={`${hover === "home" ?"text-[#2eb9ff] text-bold" :  "sm:hover:text-[#8B8B8B]"}  transition-all ease-in-out duration-500 `}><Link to="/">Home</Link></div>
+            <div className={` ${hover === "project" ?"text-[#2eb9ff] text-bold" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Project">project</Link></div>
+            <div className={` ${hover === "about" ?"text-[#2eb9ff] text-bold" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/About">About</Link></div>
+            <div className={` ${hover === "contact" ?"text-[#2eb9ff] text-bold" :  "sm:hover:text-[#8B8B8B]"} transition-all ease-in-out duration-500 `}><Link to="/Contact">Contact</Link></div>
           </ul>
         </div>
       </div>

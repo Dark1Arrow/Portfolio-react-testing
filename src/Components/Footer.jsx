@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div>
             <div className='bg-[#171717] p-5 sm:p-10 flex justify-center flex-col'>
-                <div className='text-center text-3xl sm:text-4xl lg:text-6xl font-light w-350px] sm:w-[500px] lg:w-[820px] uppercase mx-auto my-10 leading-[55px] lg:leading-[80px]' style={{ fontFamily: "Montagu Slab" }}>
+                <div className='text-center text-3xl sm:text-4xl lg:text-5xl font-light w-350px] sm:w-[500px] lg:w-[820px] uppercase mx-auto my-10 leading-[55px] lg:leading-[80px]' style={{ fontFamily: "Montagu Slab" }}>
                     Have <span className='text-[#555555]'>an</span> idea<span className='text-[#555555]'>?</span> Let’s <span className='text-[#555555]'>turn</span> it <span className='text-[#555555]'>into</span> reality—<span className='text-[#555555]'>get</span> in <span className='text-[#555555]'>touch</span>!
                 </div>
 

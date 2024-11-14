@@ -39,8 +39,6 @@ function App() {
           </Routes>
         </HashRouter>
 
-        <div className='bg-black text-white'>hello ther is page </div>
-
     </div >
     </>
   )
