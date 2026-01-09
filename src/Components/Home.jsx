@@ -41,7 +41,7 @@ const Home = () => {
     return (
         <div>
             <div className='hero-section w-full h-screen md:p-5 '>
-                <motion.div className='p-5 md:py-10 md:px-20 inner-hero-section bg-white w-full max-h-auto min-h-full border-2 border-[#414638] md:rounded-[30px] flex flex-col justify-between '
+                <motion.div className='p-5 md:py-10 md:px-20 inner-hero-section bg-white w-full max-h-auto min-h-full border-2 border-[#414638] md:rounded-[30px] flex flex-col justify-between  '
                     style={{
                         backgroundImage: "url('./homePage/hero-bg.png')",
                         backgroundPosition: "center",
@@ -70,7 +70,7 @@ const Home = () => {
                             initial={{ y: 80, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: 1, ease: easeInOut }}
-                        ><img className='w-[80px] md:w-[90px] ' src="./homePage/logo.svg" alt="" /></motion.div>
+                        ><img className='w-[80px] md:w-[90px] ' src="./homePage/logo1.svg" alt="" /></motion.div>
 
 
                         <motion.div className=' my-auto lg:flex hidden px-10 py-4 rounded-full bg-[#00000035] backdrop-blur-[5px]  border border-[#555216] '
@@ -283,3 +283,5 @@ const Home = () => {
 }
 
 export default Home
+
+

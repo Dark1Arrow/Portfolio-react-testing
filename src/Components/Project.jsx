@@ -60,7 +60,7 @@ const Project = () => {
         <div>
             <Navbar target={"project"} />
 
-            <div className='project-hero w-full h-[90vh]  '>
+            <div className='project-hero w-full h-[90vh] pt-[70px] '>
                 <div className='w-full h-full flex justify-center items-center'>
                     <div className='h-full w-full flex justify-between'>
                         <motion.div className=' absolute md:relative right-0 h-full md:flex flex-col justify-start'
@@ -159,7 +159,7 @@ const Project = () => {
                         </div>
                     </div>
                     <div className='border border-[#252525] bg-[#ADB5BD] md:order-6 order-4 flex justify-center items-center overflow-hidden'>
-                        <Link to={"https://www.figma.com/design/ukLalFk4uZdHdjbuDxbzyJ/Untitled?node-id=358-64&node-type=canvas&t=IdaJVFYcKoll0eec-0"}><motion.img style={{scale: scale}} src="projectPage/grid6.png" alt="" /></Link>
+                        <Link to={"https://final-year-project-five-navy.vercel.app/"}><motion.img style={{scale: scale}} src="projectPage/block-chain-mockup.png" alt="" /></Link>
                     </div>
                 </div>
 
