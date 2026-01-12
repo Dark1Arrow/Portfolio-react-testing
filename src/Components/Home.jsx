@@ -268,12 +268,7 @@ const Home = () => {
 
             </div>
 
-            <div className='contact-section'>
-                <div className='py-20 flex flex-col gap-5 w-[75vw] m-auto'>
-                    <div className='text-[#8A8A8A] text-xl'>(03)</div>
-                    <div className='text-3xl'>Contact</div>
-                </div>
-
+            <div className='contact-section mt-16'>
                 <div>
                     <Footer />
                 </div>
