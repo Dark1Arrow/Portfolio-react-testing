@@ -1,227 +1,192 @@
-import React, { useState } from 'react'
-import Navbar from './Navbar'
-import LeftArrow from './LeftArrow'
-import RightArrow from './RightArrow'
-import Footer from './Footer'
+import React, { useState } from 'react';
+import { motion, useScroll, useTransform, easeInOut } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
+
+// Components (Assuming these exist)
+import Navbar from './Navbar';
+
+// Styles
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './Carousel.css';
-import './Animation.css';
-import { delay, easeInOut, motion, useScroll, useTransform } from 'framer-motion'
-import { Link } from 'react-router-dom'
 
 const Project = () => {
     const { scrollYProgress } = useScroll();
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.7]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+    const [isActive, setIsActive] = useState(false);
 
-    const project = ["project1.png", "project1.png",]
+    const uiProjects = ["ui1.png", "ui2.png", "ui3.png", "ui4.png"];
 
-    const uiProjects = ["ui1.png", "ui2.png", "ui3.png", "ui4.png",]
-
-    const settings1 = {
-        className: "center",
+    const sliderSettingsUI = {
         centerMode: true,
         centerPadding: '0',
-        slidesToShow: 1, // Show three cards at a time
+        slidesToShow: 3,
         infinite: true,
-        speed: 1000,
+        speed: 800,
         autoplay: true,
-        autoplaySpeed: 4000,
-        focusOnSelect: true,
-        prevArrow: <LeftArrow />,
-        nextArrow: <RightArrow />,
+        responsive: [{ breakpoint: 1024, settings: { slidesToShow: 1 } }],
     };
-    const settings = {
-        className: "center",
-        centerMode: true,
-        centerPadding: '0',
-        slidesToShow: 3, // Show three cards at a time
-        infinite: true,
-        speed: 1000,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        focusOnSelect: true,
-        prevArrow: <LeftArrow />,
-        nextArrow: <RightArrow />,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,  // Adjust to one card on smaller screens
-                },
-            },
-        ],
-    };
-
-    const [leftGear, setLeftGear] = useState(false);
 
     return (
-        <div>
-            <Navbar target={"project"} />
+        <div className="bg-[#111111] text-white overflow-x-hidden selection:bg-[#4ADE80] selection:text-black">
 
-            <div className='project-hero w-full h-[90vh] pt-[70px] '>
-                <div className='w-full h-full flex justify-center items-center'>
-                    <div className='h-full w-full flex justify-between'>
-                        <motion.div className=' absolute md:relative right-0 h-full md:flex flex-col justify-start'
-                            initial={{ y: "19vh" }}
-                            animate={{ y: leftGear ? "19vh" : "0vh" }}
-                            transition={{ duration: 1, ease: easeInOut }}
-                        >
-                            <div className='w-[200px] md:w-[250px] h-[40px] md:h-[60px] bg-[#1E2024] '></div>
-                            <div className='h-[40%] md:h-[60%] w-full flex justify-center items-center'>
-                                <div className='h-full border-l-4 border-dashed border-[#757575]'></div>
-                            </div>
-                            <div className='hidden md:flex w-[250px] h-[60px] bg-[#1E2024] '></div>
-                        </motion.div>
+            {/* --- HERO SECTION: THE ENGINE ROOM --- */}
+            <section className='relative w-full h-screen flex flex-col justify-center items-center overflow-hidden border-b border-white/5'>
 
-                        <div className='h-full hidden md:flex justify-between flex-col py-10'>
-                            <motion.div initial={{ rotate: 90 }} animate={{ rotate: leftGear ? 90 : 0 }} transition={{ duration: 1, ease: easeInOut }} onClick={() => setLeftGear(true)}><img className='cursor-pointer w-[90px] lg:w-[100px]' src="projectPage/key.svg" alt="" /></motion.div>
-                            <motion.div initial={{ rotate: -90 }} animate={{ rotate: leftGear ? -90 : 0 }} transition={{ duration: 1, ease: easeInOut }} onClick={() => setLeftGear(false)}><img className='cursor-pointer w-[90px] lg:w-[100px]' src="projectPage/key.svg" alt="" /></motion.div>
-                        </div>
+                {/* Background Grid & Glow */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#166534] opacity-20 blur-[120px] rounded-full"></div>
 
-                        <motion.div className='h-full flex flex-col justify-end'
-                            initial={{ y: "-19vh" }}
-                            animate={{ y: leftGear ? "-19vh" : "0vh" }}
-                            transition={{ duration: 1, ease: easeInOut }}>
-                            <div className='hidden md:flex w-[250px] h-[60px] bg-[#1E2024] '></div>
-                            <div className='h-[40%] md:h-[60%] w-full flex justify-center items-center'>
-                                <div className='h-full border-l-4 border-dashed border-[#757575]'></div>
-                            </div>
-                            <div className='w-[200px] md:w-[250px] h-[40px] md:h-[60px] bg-[#1E2024] '></div>
-                        </motion.div>
-                    </div>
-
-                    <div className='absolute z-50 w-full h-[250px] bg-[#151617] p-10 lg:px-20 flex justify-between items-center'>
-                        <div className='md:relative absolute left:10 sm:left-20 md:-translate-y-0 -translate-y-[250px]'>
-                            <div className='md:translate-x-0 translate-x-14'>
-                                <motion.img initial={{ rotate: 90 }} animate={{ rotate: leftGear ? 90 : 0 }} transition={{ duration: 1, ease: easeInOut }} className='cursor-pointer w-[70px] sm:w-[90px]' src="projectPage/gear.svg" alt="" />
-                            </div>
-                            <div className=' -translate-y-3 md:translate-x-14 rotate-12'>
-                                <motion.img initial={{ rotate: 90 }} animate={{ rotate: leftGear ? 90 : 0 }} transition={{ duration: 1, ease: easeInOut }} className='cursor-pointer w-[70px] sm:w-[90px] origin-center ' src="projectPage/gear.svg" alt="" />
-                            </div>
-                        </div>
-
-                        <div className='capitalize flex flex-col mx-auto gap-5 justify-center items-center'>
-                            <div className='text-4xl md:text-4xl w-[150px] md:w-[400px] flex text-center' style={{ fontFamily: "montagu slab" }}>my Creative journey</div>
-                            <div className='text-xl md:text-xl text-[#8A8A8A]'>2024 -2025</div>
-                        </div>
-
-                        <div className='absolute md:relative right-10 sm:right-20 md:translate-y-0 translate-y-[250px]'>
-                            <div className=''><motion.img initial={{ rotate: 90 }} animate={{ rotate: leftGear ? 90 : 0 }} transition={{ duration: 1, ease: easeInOut }} className='w-[70px] sm:w-[90px]' src="projectPage/gear.svg" alt="" /></div>
-                            <div className='-translate-y-3 -translate-x-14 rotate-12'><motion.img initial={{ rotate: 90 }} animate={{ rotate: leftGear ? 90 : 0 }} transition={{ duration: 1, ease: easeInOut }} className='w-[70px] sm:w-[90px] origin-center ' src="projectPage/gear.svg" alt="" /></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className=' ui-section w-full h-[60vh] sm:h-[80vh] md:h-[80vh] lg:h-[95vh] my-[20vh] md:my-[50vh] flex justify-between flex-col'>
-                {/* <div className='text-3xl md:text-4xl py-5 md:py-10 px-5 md:px-44 capitalize'>ui <span className='text-[#8A8A8A]'>design</span></div> */}
-
-                <div className=' md:mx-auto mx-5 md:w-[80vw] lg:min-w-[70vw] min-h-[30vh] sm:min-h-[50vh] lg:min-h-full grid grid-rows-2 grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 capitalize'>
-                    <div className='border border-[#252525] order-1 hidden md:flex justify-center items-center bg-[#151617]'>
-                        <Link to={"https://www.figma.com/design/BfEDbeQCK6Km2sN0VTRSlN/Movie-Recommendation?t=aUzEfpH8WdPYe0v6-0"}><motion.img style={{ scale: scale }} src="projectPage/grid 1.svg" alt="" /></Link>
-                    </div>
-                    <div className='border border-[#252525] bg-[#151617] md:order-2 order-1 flex justify-between flex-col'>
-                        <div className='w-full text:lg md:text-xl font-semibold p-5 sm:p-10'>movie <br /> recomdation</div>
-                        <div className='w-[100%] overflow-hidden'> <Link to={"https://www.figma.com/design/BfEDbeQCK6Km2sN0VTRSlN/Movie-Recommendation?t=aUzEfpH8WdPYe0v6-0"}><motion.img style={{ scale: scale }} src="projectPage/grid2.png" alt="" /></Link></div>
-                    </div>
-                    <div className='border border-[#252525] bg-[#151617] md:order-3 order-2 flex-col justify-between'>
-                        <div className='text-lg md:text-xl font-semibold sm:p-10 flex mx-auto h-[50%] w-[90%] justify-center'>
-                            <div className=' gap-5 items-center md:flex hidden space-between'>
-                                <div className="border-l-2  h-[70px] "></div>
-                                <div className="border-l-2  h-[110px]"></div>
-                                <div className="border-l-2  h-[150px]"></div>
-                            </div>
-                            <div className='flex text-center justify-center items-center sm:px-5 w-[80%]'>Our Picks,<br /> Your Best <br /> Watch</div>
-                            <div className=' gap-5 items-center md:flex hidden space-between'>
-                                <div className="border-l-2 h-[150px]"></div>
-                                <div className="border-l-2 h-[110px]"></div>
-                                <div className="border-l-2 h-[70px] "></div>
-                            </div>
-                        </div>
-                        <div className='w-full sm:pb-20 overflow-hidden'> <motion.img className='w-[50%] md:w-[220px] h-[30%]' src="projectPage/grid3.svg" alt="" /></div>
-                    </div>
-                    <div className='border border-[#252525] bg-[#ADB5BD] md:order-4 order-3 p-2 md:p-20 flex justify-center items-center'>
-                        <div className='w-[90%] md:p-10 p-5 bg-[#1A1A18] flex flex-col justify-between item-center'>
-                            <div className='flex text-center text-lg md:text-xl mx-auto'>Turning <br /> designs <br /> into <br /> reality.</div>
-                            <div className='border w-[50px] mx-auto m-2 md:my-5'></div>
-                        </div>
-                    </div>
-                    <div className='flex-col gap-4 hidden md:flex order-4  '>
-                        <div className='border border-[#252525] bg-[#1E2024] flex flex-col  w-full h-[50%] justify-between items-center'>
-                            <div className='w-full justify-center flex h-[50%]'><img className='w-[40px] h-full' src="projectPage/grid5.svg" alt="" /></div>
-                            <div className='flex justify-center items-center w-[40%] '> <button className=' sm:hover:font-semibold sm:hover:bg-[#42588b] transition-all ease-in-out duration-500 w-full bg-[#333A49] my-5 py-3 px-8 text-lg font-normal rounded-[5px]'><Link to={"https://www.figma.com/design/BfEDbeQCK6Km2sN0VTRSlN/Movie-Recommendation?t=aUzEfpH8WdPYe0v6-0"}>live Preview</Link></button></div>
-                        </div>
-                        <div className='border border-[#252525] bg-[#1E2024] w-full h-[50%] justify-center items-center flex '>
-                            <div className=' w-[50%]' > <button className= ' sm:hover:font-semibold sm:hover:bg-[#42588b] transition-all ease-in-out duration-500 w-full bg-[#333A49] py-3 px-8 text-lg font-normal rounded-[5px]'><Link to={"https://www.figma.com/design/ukLalFk4uZdHdjbuDxbzyJ/Untitled?node-id=358-64&node-type=canvas&t=IdaJVFYcKoll0eec-0"}>live Preview</Link></button></div>
-                            <div className='w-[30%] justify-center p-4 md:pr-8 flex'><img className='rotate-90 w-[50%]' src="projectPage/grid5.svg" alt="" /></div>
-                        </div>
-                    </div>
-                    <div className='border border-[#252525] bg-[#ADB5BD] md:order-6 order-4 flex justify-center items-center overflow-hidden'>
-                        <Link to={"https://final-year-project-five-navy.vercel.app/"}><motion.img style={{scale: scale}} src="projectPage/block-chain-mockup.png" alt="" /></Link>
-                    </div>
-                </div>
-
-            </div>
-
-            <div className=' designs-section w-full h-[50vh] md:h-[90vh] flex justify-between flex-col py-10 sm:py-20'>
-                {/* <div className='text-3xl md:text-4xl mx-auto md:ml-44 capitalize'>Designs</div> */}
-
-                <div className='w-[85%] sm:w-[90%] mx-auto h-[100%] lg:h-[90%] '>
-                    <Slider {...settings}>
-                        {uiProjects.map((data, index) => (
-                            <div key={index} className='card py-20 px-6 sm:px-20 md:px-5 lg:px-5 h-[350px] sm:h-[400px] lg:h-[450px]'>
-                                <motion.div className='  border-[3px] border-[#252525] flex justify-center items-center text-5xl h-full w-full'
-                                    style={{
-                                        backgroundImage: `url("./projectPage/${data}")`,
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundSize: "cover",
-                                    }}
-                                ></motion.div>
-                            </div>
+                <div className='relative z-10 flex flex-col items-center'>
+                    {/* Animated Mechanical Pistons */}
+                    <div className='flex gap-20 mb-12'>
+                        {[1, 2].map((i) => (
+                            <motion.div
+                                key={i}
+                                animate={{ y: isActive ? [0, -20, 0] : 0 }}
+                                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                                className="w-1 h-32 bg-gradient-to-b from-[#4ADE80] to-transparent opacity-50"
+                            />
                         ))}
-                    </Slider>
+                    </div>
+
+                    <div className='text-center space-y-4 px-6'>
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className='text-[#4ADE80] font-mono tracking-[0.3em] text-sm uppercase'
+                        >
+                            System.Initialize // 2024-2025
+                        </motion.span>
+                        <h1 className='text-6xl md:text-8xl font-black tracking-tighter uppercase italic'
+                            style={{ fontFamily: 'Inter, sans-serif' }}>
+                            Creative <span className="text-transparent border-t border-b border-white/20 px-4">Lab</span>
+                        </h1>
+                        <p className='text-zinc-400 max-w-md mx-auto text-lg font-light leading-relaxed'>
+                            An intersection of high-performance engineering and visual storytelling.
+                        </p>
+                    </div>
+
+                    {/* Industrial Toggle */}
+                    <button
+                        onClick={() => setIsActive(!isActive)}
+                        className={`mt-16 px-8 py-3 border transition-all duration-500 flex items-center gap-4 group
+                        ${isActive ? 'border-[#4ADE80] text-[#4ADE80] shadow-[0_0_20px_rgba(74,222,128,0.3)]' : 'border-zinc-700 text-zinc-400'}`}
+                    >
+                        <motion.div animate={{ rotate: isActive ? 180 : 0 }}>
+                            <img src="projectPage/gear.svg" className={`w-5 ${isActive ? 'invert-0' : 'opacity-30'}`} alt="" />
+                        </motion.div>
+                        <span className="font-mono text-xs tracking-widest uppercase">
+                            {isActive ? "Engine Online" : "Start Sequence"}
+                        </span>
+                    </button>
                 </div>
-            </div>
+            </section>
 
-            <div className=' project-section w-full h-[100vh] md:h-[80vh] lg:h-[80vh] my-40 md:my-32 flex justify-between flex-col '>
-                {/* <div className='text-3xl md:text-4xl mx-auto md:ml-44 capitalize'>projects</div> */}
+            {/* --- PROJECT GRID: THE BLUEPRINT --- */}
+            {/* --- PROJECT GRID: THE BLUEPRINT --- */}
+            <section className='container mx-auto py-32 px-6'>
+                {/* Stable Header with accent bar */}
+                <div className='flex items-end justify-between mb-16 border-l-[1px] border-[#4ADE80]/30 pl-8'>
+                    <div className="space-y-2">
+                        <h2 className='text-5xl font-black uppercase tracking-tighter'>
+                            Active <span className="text-[#4ADE80]">Inventory</span>
+                        </h2>
+                        <div className="flex items-center gap-3 font-mono text-[10px] text-zinc-500 uppercase">
+                            <span className="w-2 h-2 rounded-full bg-[#4ADE80] animate-pulse"></span>
+                            Status: Operational // Total_Load: 04
+                        </div>
+                    </div>
+                </div>
 
-                <div className='w-[90vw] sm:w-[90%] xl:w-[85%] mx-auto h-[150vh] lg:h-[90%] xl:[80%] '>
-                    <Slider {...settings1}>
-                        {project.map((data, index) => (
-                            <div key={index} className='w-[100vw] h-[90vh] lg:h-[80vh] p-5 sm:p-10'>
-                                <div className='w-full h-full  flex flex-col-reverse lg:flex-row  justify-between p-5 sm:p-10 xl:p-20 items-center'>
-                                    <div className='w-[100%] md:w-[90%] my-auto lg:w-[30%] h-[40%] lg:h-[90%] flex flex-col justify-center gap-5'>
-                                        <div className='text-2xl md:text-2xl'>MovieFlix - Your Ultimate Movie Guide</div>
-                                        <div className='text-sm text-[#BFBFBF]'>MovieFlix is a MERN app for personalized movie recommendations, top 10 lists, and movie searches using OMDB and TMDB APIs.</div>
-                                        <div className='xl:flex-row flex-col flex  gap-5'>
-                                            <button className=' sm:hover:font-semibold sm:hover:bg-[#2164ff] transition-all ease-in-out duration-500 bcapitalize py-3 px-10 bg-[#7729ff] rounded-[10px] text-lg'>view website</button>
-                                            <div className='flex justify-center gap-5'>
-                                                <button className='p-3 border border-[#1e1e1e]'><img src="homePage/figma.svg" alt="" /></button>
-                                                <button className='p-3 border border-[#1e1e1e]'><img src="homePage/git.svg" alt="" /></button>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+                    <motion.div
+                        whileHover={{ y: -5 }}
+                        className='group relative bg-[#161616] border border-white/5 p-1 hover:border-[#4ADE80]/40 transition-all duration-500'
+                    >
+                        {/* The Internal Content Wrapper */}
+                        <div className="bg-[#111111] p-8 border border-white/5">
+                            <div className="flex justify-between items-start mb-6">
+                                <h3 className='text-2xl font-bold tracking-tight group-hover:text-[#4ADE80] transition-colors'>MovieFlix</h3>
+                                <span className="font-mono text-[10px] text-zinc-600">MOD_001</span>
+                            </div>
+
+                            <p className='text-zinc-400 text-sm mb-8 leading-relaxed h-12'>
+                                MERN stack recommendation engine powered by neural filtering.
+                            </p>
+
+                            <Link to="/figma-link" className="block relative overflow-hidden bg-zinc-900 aspect-video border border-white/5">
+                                <motion.img
+                                    style={{ scale }}
+                                    src="projectPage/grid2.png"
+                                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                                />
+                                {/* Corner accents for blueprint look */}
+                                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#4ADE80]/50"></div>
+                                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#4ADE80]/50"></div>
+                            </Link>
+
+                            <div className="mt-8 pt-6 border-t border-white/5 flex gap-3">
+                                {['React', 'Tailwind'].map(tag => (
+                                    <span key={tag} className="text-[9px] font-mono px-2 py-1 bg-zinc-900 text-zinc-500 uppercase tracking-widest">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+                    {/* Repeat for other items */}
+                </div>
+            </section>
+
+            {/* --- SLIDER SECTION: THE GALLERY --- */}
+            <section className='pb-40 relative'>
+                {/* Stable Background - No Skew */}
+                <div className="absolute inset-0 bg-[#4ADE80]/[0.02] border-t border-b border-white/5"></div>
+
+                <div className='max-w-[1400px] mx-auto px-6'>
+                    {/* Section Divider */}
+                    <div className="flex items-center gap-4 mb-16">
+                        <span className="font-mono text-[#4ADE80] text-xs tracking-[0.5em] uppercase">Visual_Archive</span>
+                        <div className="h-[1px] flex-grow bg-gradient-to-r from-[#4ADE80]/20 to-transparent"></div>
+                    </div>
+
+                    <div className='relative'>
+                        <Slider {...sliderSettingsUI}>
+                            {uiProjects.map((img, idx) => (
+                                <div key={idx} className='px-4 outline-none'>
+                                    <div className='relative group h-[550px] overflow-hidden bg-[#161616] border border-white/5'>
+                                        {/* Stabilized Image Layer */}
+                                        <div
+                                            className='absolute inset-0 bg-cover bg-top transition-transform duration-[1.5s] ease-out group-hover:scale-110'
+                                            style={{ backgroundImage: `url("./projectPage/${img}")` }}
+                                        />
+
+                                        {/* Constant Vignette for Stability */}
+                                        <div className=',, bg-gradient-to-t from-[#111111] via-transparent to-[#111111]/30 opacity-80' />
+
+                                        {/* Fixed Bottom Label */}
+                                        <div className='absolute bottom-0 left-0 w-full p-10 flex justify-between items-end'>
+                                            <div className="translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                                <p className='text-[#4ADE80] font-mono text-[10px] mb-2 uppercase tracking-widest'>Case_Study_0{idx + 1}</p>
+                                                <h4 className="text-2xl font-bold uppercase tracking-tighter">System Interface</h4>
+                                            </div>
+                                            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:border-[#4ADE80]/50 transition-colors">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#4ADE80" />
+                                                </svg>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='w-[100%] md:w-[90%] lg:w-[60%] h-[40%] lg:h-[120%] border border-[#2D2D2D]'
-                                        style={{
-                                            backgroundImage: `url("./projectPage/${data}")`,
-                                            backgroundPosition: "start",
-                                            backgroundRepeat: "no-repeat",
-                                            backgroundSize: "cover",
-                                        }}></div>
                                 </div>
-                            </div>
-                        ))}
-                    </Slider>
+                            ))}
+                        </Slider>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <Footer />
         </div>
-    )
-}
+    );
+};
 
-export default Project
+export default Project;
